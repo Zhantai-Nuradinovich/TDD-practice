@@ -22,13 +22,14 @@ namespace TDD.Tests
         [TestCase(9, ExpectedResult = "Composite")]
         [TestCase(49, ExpectedResult = "Composite")]
         [TestCase(48, ExpectedResult = "48")]
-        [TestCase(1, ExpectedResult = "1")]
-        public string GetFizzBuzz_CorrectNumbers_ReturnsFizzBuzzOrNumber(int number)
+        [TestCase(1, ExpectedResult = "Composite")]
+        public string GetPrimeOrComposite_CorrectNumbers_ReturnsPrimeOrCompositeWordInRange1To100(int number)
         {
             return PrimeComposite.GetPrimeOrCompositeWordInRange1To100(number);
         }
+
         [Test]
-        public void GetFizzBuzz_OutOfRangeNumbers_ThrowsArgumentException()
+        public void GetPrimeOrComposite_OutOfRangeNumbers_ThrowsArgumentException()
         {
             Assert.That(() => PrimeComposite.GetPrimeOrCompositeWordInRange1To100(-5), Throws.ArgumentException);
             Assert.That(() => PrimeComposite.GetPrimeOrCompositeWordInRange1To100(0), Throws.ArgumentException);
