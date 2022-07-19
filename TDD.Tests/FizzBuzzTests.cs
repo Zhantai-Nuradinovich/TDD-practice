@@ -15,7 +15,7 @@ namespace TDD.Tests
         {
             return FizzBuzz.GetFizzOrBuzzOrNumberInRange1To100(number);
         }
-        
+        [Test]
         public void GetFizzBuzz_OutOfRangeNumbers_ThrowsArgumentException()
         {
             Assert.That(() => FizzBuzz.GetFizzOrBuzzOrNumberInRange1To100(-5), Throws.ArgumentException);
