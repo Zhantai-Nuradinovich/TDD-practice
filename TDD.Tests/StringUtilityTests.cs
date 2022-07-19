@@ -2,10 +2,10 @@ using NUnit.Framework;
 using System.Linq;
 using TDD;
 
-namespace Task1.Tests
+namespace TDD.Tests
 {
     [TestFixture]
-    public class TDDTests
+    public class StringUtilityTests
     {
         [Test]
         public void Sum_EmptyStrings_ThrowsArgumentException()
@@ -19,7 +19,7 @@ namespace Task1.Tests
         [TestCase("-3", "0", ExpectedResult = -3)]
         [TestCase("-3999", "-", ExpectedResult = -3999)]
         [TestCase("-##$#", "dss654", ExpectedResult = 0)]
-        public int Sum_TwoCorrectNumbers_ReturnsSum(string num1, string num2)
+        public int Sum_TwoNumbers_ReturnsSum(string num1, string num2)
         {
             return StringUtility.Sum(num1, num2);
         }
