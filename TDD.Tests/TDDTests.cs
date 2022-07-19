@@ -10,13 +10,14 @@ namespace Task1.Tests
         [Test]
         public void Sum_EmptyStrings_ThrowsArgumentException()
         {
-            Assert.That(() => StringUtility.Sum("", ""), Throws.ArgumentException);
+            Assert.That(() => StringUtility.Sum("", ""), Throws.ArgumentNullException);
         }
 
         [TestCase("1", "1", ExpectedResult = 2)]
         [TestCase("3", "0", ExpectedResult = 3)]
         [TestCase("3.5", "0", ExpectedResult = 0)]
-        [TestCase("3", "0", ExpectedResult = 3)]
+        [TestCase("-3", "0", ExpectedResult = -3)]
+        //[TestCase("-3999", "-", ExpectedResult = -3999)]
         public int Sum_TwoCorrectNumbers_ReturnsSum(string num1, string num2)
         {
             return StringUtility.Sum(num1, num2);

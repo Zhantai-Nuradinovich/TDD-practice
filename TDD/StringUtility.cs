@@ -6,7 +6,12 @@ namespace TDD
     {
         public static int Sum(string num1, string num2)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrWhiteSpace(num1) || string.IsNullOrWhiteSpace(num2))
+                throw new ArgumentNullException();
+
+            int.TryParse(num1, out int num1Int);
+            int.TryParse(num2, out int num2Int);
+            return num1Int + num2Int;
         }
     }
 }
